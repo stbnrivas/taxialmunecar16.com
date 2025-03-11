@@ -64,7 +64,23 @@
         @yield('body')
         {{-- --}}
 
+        <footer class="bg-emerald-500">
+            <div class="flex flex-row place-content-between mx-96 my-20 text-white">
+                <div class="text-xl font-poppins font-bold">Legal Notice</div>
+                <div class="text-xl font-poppins font-bold">Privacy Policy</div>
+                <div class="text-xl font-poppins font-bold">Cookie Policy</div>
+                <div class="text-xl font-poppins font-bold">Accesibility</div>
+            </div>
+            <div class="flex flex-row place-content-between mx-96 my-20">
+                <img class="h-16 object-cover" src="/img/logo-acelera-pyme.png" alt="">
+                <img class="h-16 object-cover" src="/img/logo-kitdigital.png" alt="">
+                <img class="h-16 object-cover" src="/img/logo-plan-recuperacion-transformacion.png" alt="">
+                <img class="h-16 object-cover" src="/img/logo-ES-Financiado-por-la-Union-Europea.png" alt="">
+            </div>
+        </footer>
+
     </div>
+
 
     <script src="{{url('/js/flowbite.min.js')}} "></script>
     <script setup>
