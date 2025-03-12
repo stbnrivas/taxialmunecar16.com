@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://taxialmunecar16.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -83,6 +83,22 @@ return [
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Available locales
+    |--------------------------------------------------------------------------
+    |
+    | List all locales that your application works with
+    |
+    */
+
+    'available_locales' => [
+        'Español' => 'es',
+        'English' => 'en',
+        'Deutsch' => 'de',
+        'Français' => 'fr',
+    ],
 
     /*
     |--------------------------------------------------------------------------

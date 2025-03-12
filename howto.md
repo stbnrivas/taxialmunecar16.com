@@ -17,4 +17,7 @@ php artisan serve
 npm run dev
 
 npm run watch
+
+
+php artisan lang:publish
 ```
