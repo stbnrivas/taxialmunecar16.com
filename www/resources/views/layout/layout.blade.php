@@ -9,13 +9,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body class="bg-gray-100">
+<body class="">
     <div class="h-screen grid">
-
-        <nav class="bg-white text-gray-900 border-gray-200 dark:bg-gray-900 dark:text-gray-40 pt-2 h-12">
+        <nav class="bg-white text-gray-900 border-gray-200 dark:bg-gray-900 dark:text-gray-40 pt-5 pb-5 h-20">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
             <a href="https://taxialmunecar16.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">Taxi Almuñecar</span>
+                <span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white font-poppins">Taxi Almuñecar</span>
             </a>
             <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
@@ -27,27 +26,27 @@
                 <ul class="font-bold flex flex-col lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                     <a href="#" class="font-poppins block px-3 text-white bg-blue-700 rounded-sm lg:bg-transparent lg:text-blue-700 lg:p-0 dark:text-white lg:dark:text-blue-500" aria-current="page">
-                        Home
+                        {{__('Home')}}
                     </a>
                 </li>
                 <li>
                     <a href="#" class="font-poppins  block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
-                        Book Airport Taxi
+                        {{__('Book Airport Taxi')}}
                     </a>
                 </li>
                 <li>
                     <a href="#" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
-                        Book Cruises Taxi
+                        {{__('Book Cruises Taxi')}}
                     </a>
                 </li>
                 <li>
                     <a href="#" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
-                        Tourist Routes
+                        {{__('Tourist Routes')}}
                     </a>
                 </li>
                 <li>
                     <a href="#" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
-                        Contact
+                        {{__('Contact')}}
                     </a>
                 </li>
                 <li>
@@ -78,6 +77,28 @@
                 <img class="h-16 object-cover" src="/img/logo-ES-Financiado-por-la-Union-Europea.png" alt="">
             </div>
         </footer>
+
+
+        <div class="flex">
+            <a href="{{ env("APP_URL") }}/es/">
+            <img class="fixed bottom-0 left-5 h-10 mr-20 mb-30" src="/img/locales/es.svg" alt="traducir a castellano">
+            </a>
+            <a href="{{ env("APP_URL") }}/en/">
+            <img class="fixed bottom-0 left-20 h-10 mr-20 mb-30" src="/img/locales/en.svg" alt="translate to english">
+            </a>
+            <a href="{{ env("APP_URL") }}/fr/">
+            <img class="fixed bottom-0 left-35 h-10 mr-20 mb-30" src="/img/locales/fr.svg" alt="traduire en français">
+            </a>
+            <a href="{{ env("APP_URL") }}/de/">
+            <img class="fixed bottom-0 left-50 h-10 mr-20 mb-30" src="/img/locales/de.svg" alt="ins Deutsche übersetzen">
+        </a>
+        </div>
+
+        <div class="">
+            <a href="https://api.whatsapp.com/send/?phone=34667033917&text&type=phone_number&app_absent=0">
+                <img class="fixed bottom-0 right-5 h-20 mr-20 mb-30" src="/img/logos/whatsapp.svg" alt="whatsapp logo">
+            </a>
+        </div>
 
     </div>
 

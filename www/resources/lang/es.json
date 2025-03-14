@@ -1,4 +1,8 @@
 {
+    "Home": "Inicio",
+    "Book Cruises Taxi": "Reserva para crucero",
+    "Tourist Routes": "Rutas turisticas",
+    "Contact": "Contacto",
     "Taxi?": "¿Necesita un Taxi?",
     "We take you to your destination": "Le llevamos a su destino",
     "Make your reservation here": "Reserve Aqui",
@@ -39,7 +43,5 @@
     "your email address": "Introduzca su dirección de correo",
     "taxi pickup location": "Introduzca la direccion de recogida (obligatorio)",
     "taxi destination": "Introduzca la direccion de destino",
-    "Make your reservation!": "Hacer su reserva",
-    "": "",
-    "": ""
+    "Make your reservation!": "Hacer su reserva"
 }
