@@ -106,7 +106,8 @@
     {{-- ROW 8 --}}
     <div class="col-span-1 text-black font-poppins font-bold">
         <div class="p-10">
-            <form action="">
+            <form method="post" action="/booking">
+                @csrf
                 <select class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" name="type of booking">
                     <option value="none" selected="selected">{{__('Please select one of type of booking')}}</option>
                     <option value="instantaneous">{{__('Instant Booking')}}</option>
@@ -115,7 +116,8 @@
                     <option value="cruise">       {{__('Cruise Booking')}}</option>
                     <option value="routes">       {{__('Route by coast')}}</option>
                 </select>
-                <input class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('date for booking')}}">
+                <input name="date" type="date" class="
+                block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('date for booking')}}">
                 <input class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('time for booking')}}">
 
                 <input class="block p-3 mt-3 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('your name and surname')}}">

@@ -20,4 +20,7 @@ npm run watch
 
 
 php artisan lang:publish
+
+php artisan make:model Booking --migration
+php artisan make:controller BookingController
 ```
