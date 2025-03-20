@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale(); }}">
+<html lang="{{ app()->getLocale(); }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body class="">
+<body>
     <div class="h-screen grid">
         <nav class="bg-white text-gray-900 border-gray-200 dark:bg-gray-900 dark:text-gray-40 pt-5 pb-5 h-20">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
@@ -25,32 +25,32 @@
             <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
                 <ul class="font-bold flex flex-col lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a href="#" class="font-poppins block px-3 text-white bg-blue-700 rounded-sm lg:bg-transparent lg:text-blue-700 lg:p-0 dark:text-white lg:dark:text-blue-500" aria-current="page">
+                    <a href="#" class="font-poppins block px-3 text-white bg-emerald-700 rounded-sm lg:bg-transparent lg:text-emerald-700 lg:p-0 dark:text-white lg:dark:text-emeral-500" aria-current="page">
                         {{__('Home')}}
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="font-poppins  block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                    <a href="#booking-type" class="font-poppins  block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0 dark:text-white lg:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
                         {{__('Book Airport Taxi')}}
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                    <a href="#booking-type" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0 dark:text-white lg:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
                         {{__('Book Cruises Taxi')}}
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                    <a href="#booking-type" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0 dark:text-white lg:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
                         {{__('Tourist Routes')}}
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                    <a href="#contact-info" class="font-poppins block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0 dark:text-white lg:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
                         {{__('Contact')}}
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                    <a href="#" class="block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0 dark:text-white lg:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
                         <img class="w-13 " src="img/Bandera_de_Almunecar_Granada.jpg" alt="">
                     </a>
                 </li>
@@ -61,14 +61,15 @@
 
         {{-- --}}
         @yield('body')
+        @yield('js')
         {{-- --}}
 
         <footer class="bg-emerald-500">
             <div class="flex flex-row place-content-between mx-96 my-20 text-white">
-                <div class="text-xl font-poppins font-bold">Legal Notice</div>
-                <div class="text-xl font-poppins font-bold">Privacy Policy</div>
-                <div class="text-xl font-poppins font-bold">Cookie Policy</div>
-                <div class="text-xl font-poppins font-bold">Accesibility</div>
+                <div class="text-xl font-poppins font-bold">{{__('Legal Notice')}}</div>
+                <div class="text-xl font-poppins font-bold">{{__('Privacy Policy')}}</div>
+                <div class="text-xl font-poppins font-bold">{{__('Cookie Policy')}}</div>
+                <div class="text-xl font-poppins font-bold">{{__('Accesibility')}}</div>
             </div>
             <div class="flex flex-row place-content-between mx-96 my-20">
                 <img class="h-16 object-cover" src="/img/logo-acelera-pyme.png" alt="">
@@ -111,6 +112,6 @@
         onMounted(() => {
             initFlowbite();
         })
-        </script>
+    </script>
 </body>
 </html>

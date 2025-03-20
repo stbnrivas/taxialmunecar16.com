@@ -1,5 +1,5 @@
 {
-    "Home": "house",
+    "Home": "House",
     "Book Cruises Taxi": "Kreuzfahrten buchen Taxi",
     "Tourist Routes": "Touristenrouten",
     "Contact": "Kontakt",
@@ -12,7 +12,7 @@
     "Service 24h": "Service 24h",
     "Make your reservation here,": "Machen Sie hier Ihre Reservierung,",
     " for right now or in a few days":  "für jetzt oder in ein paar Tagen",
-    "Instant Booking":  "Sofortige Buchung",
+    "Almuñecar Instant Booking":  "Sofortige Buchung",
     "Booking by date":  "Buchung nach Datum",
     "Book a taxi to the airport":  "Buchen Sie ein Taxi zum Flughafen",
     "If you arrive at Malaga airport and need transportation, please call us.": "Wenn Sie am Flughafen Málaga ankommen und Transport benötigen, rufen Sie uns bitte an.",
@@ -36,6 +36,10 @@
     "Airport Booking":  "Flughafenbuchung",
     "Cruise Booking":  "Kreuzfahrtbuchung",
     "Route by coast":  "Route entlang der Küste",
+    "Please select the port for your booking": "Bitte wählen Sie den Hafen für Ihre Reservierung",
+    "Please select the airport for your booking": "Bitte wählen Sie den Flughafen für Ihre Reservierung",
+    "Port": "Seehafen",
+    "Airport": "Flughafen",
     "date for booking":  "Datum für die Buchung",
     "time for booking":  "Zeit für die Buchung",
     "your name and surname":  "Ihr Vor- und Nachname",
@@ -43,45 +47,10 @@
     "your email address":  "Ihre E-Mail-Adresse",
     "taxi pickup location":  "Taxi Abholort",
     "taxi destination":  "Taxi Zielort",
-    "Make your reservation!": "Machen Sie Ihre Reservierung!"
+    "Make your reservation!": "Machen Sie Ihre Reservierung!",
+    "If you are arriving or going to the airport need transportation, please do not hesitate to call us. We are here whe you need us with 24-hour availability. We make sure that you and your family get bes care posible.": "Benötigen Sie bei Ihrer Ankunft oder Ihrem Transfer zum Flughafen einen Transport? Rufen Sie uns gerne an. Wir sind rund um die Uhr für Sie da. Wir sorgen dafür, dass Sie und Ihre Familie die bestmögliche Betreuung erhalten.",
+    "Legal Notice": "Impressum",
+    "Privacy Policy": "Datenschutzerklärung",
+    "Cookie Policy": "Cookie-Richtlinie",
+    "Accesibility": "Barrierefreiheit"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

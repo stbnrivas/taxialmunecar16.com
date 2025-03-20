@@ -9,13 +9,13 @@
             <span class="block text-center text-8xl font-roboto">{{ __('Taxi?') }}</span>
             <span class="block text-center text-8xl font-roboto">{{ __('We take you to your destination') }}</span>
             <div class="block pt-15">
-                <a class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-md rounded-xl" href="">{{ __('Make your reservation here') }}</a>
+                <a href="#contact-info" class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-md rounded-xl">{{ __('Make your reservation here') }}</a>
             </div>
     </div>
 
 
     {{-- ROW 2 --}}
-    <div class="col-span-1 h-140 text-black">
+    <div id="contact-info" class="col-span-1 h-140 text-black">
         <h1 class="text-6xl text-center mt-20 font-roboto font-bold">Taxi nº16, Almuñecar</h1>
         <p class="text-2xl text-center pt-3 font-poppins">{{ __('vehicle prepared for traveling with babies, childrem or pets.') }}</p>
         <p class="text-xl text-center pt-3 font-poppins">{{ __('email') }}: info@taxialmunecar16.com.</p>
@@ -94,7 +94,7 @@
     <div class="col-span-1 bg-[url(/img/istockphoto-1191221365.jpg)] bg-cover bg-left-bottom h-140 text-white">
     </div>
     <div class="col-span-1 mt-8 text-black">
-        <h2 class="text-5xl text-center pt-20 font-roboto font-bold">{{__('Tropical Coast Routes')}}.</h1>
+        <h2 class="text-5xl text-center pt-20 font-roboto font-bold">{{__('Tropical Coast Routes')}}.</h2>
         <p class="text-2xl text-center pt-7 font-poppins">{{__("If you want to discover the best sunsets on the Costa Tropical, don&quote;t hesitate to call us.")}}</p>
         <p class="text-2xl text-center pt-2 font-poppins">{{__('At taxi almunecar 16, we will take care of organizing the best route for your trip.')}}</p>
         <div class="pt-6">
@@ -106,40 +106,54 @@
     {{-- ROW 8 --}}
     <div class="col-span-1 text-black font-poppins font-bold">
         <div class="p-10">
-            <form method="post" action="/booking">
+            <form id="booking-form" method="post" action="/booking">
                 @csrf
-                <select class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" name="type of booking">
-                    <option value="none" selected="selected">{{__('Please select one of type of booking')}}</option>
-                    <option value="instantaneous">{{__('Instant Booking')}}</option>
-                    <option value="normal">       {{__('Booking for a date')}}</option>
+                <input name="lang" type="hidden" value="{{ app()->getLocale() }}">
+                <select name="type" id="booking-type" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
+                    <option value="unknown"    >{{__('Please select one of type of booking')}}</option>
+                    <option value="instant"    >{{__('Almuñecar Instant Booking')}}</option>
+                    <option value="reservation">  {{__('Booking for a date')}}</option>
                     <option value="airport">      {{__('Airport Booking')}}</option>
                     <option value="cruise">       {{__('Cruise Booking')}}</option>
                     <option value="routes">       {{__('Route by coast')}}</option>
                 </select>
-                <input name="date" type="date" class="
-                block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('date for booking')}}">
-                <input class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('time for booking')}}">
+                <select id="airport-select" name="airport" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
+                    <option value="unknown-airport"      >{{__('Please select the airport for your booking')}}</option>
+                    <option value="Granada">Granada {{__('Airport')}}</option>
+                    <option value="Málaga" >Málaga {{__('Airport')}}</option>
+                </select>
+                <select id="port-select" name="port" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
+                    <option value="unknown-port"      >{{__('Please select the port for your booking')}}</option>
+                    <option value="Motril">Motril {{__('Port')}}</option>
+                    <option value="Málaga" >Málaga {{__('Port')}}</option>
+                </select>
+                <input name="date" type="date" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('date for booking')}}">
+                <input name="time" type="time" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('time for booking')}}">
+                <input name="origin"  type="text" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi pickup location')}}">
+                <input name="destination" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('taxi destination')}}">
 
-                <input class="block p-3 mt-3 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('your name and surname')}}">
-                <input class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('your phone number')}}">
-                <input class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('your email address')}}">
-                <input class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('taxi pickup location')}}">
-                <input class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white" type="text" placeholder="{{__('taxi destination')}}">
-                <input class="block p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}">
+                <input name="name" class="block p-3 mt-3 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your name and surname')}}">
+                <input name="phone" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your phone number')}}">
+                <input name="email" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your email address')}}">
+
+                <input id="submit" class="block p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}">
             </form>
 
         </div>
     </div>
     <div class="col-span-1 bg-[url(/img/fran-fernandez-r9uyVJ7_K6s-unsplash.jpg)] bg-center bg-cover text-white font-bold">
         <h3 class="block text-6xl text-center pt-25 font-roboto">
-            Make your reservation here
+            {{__('Make your reservation here')}}
         </h3>
         <p class="text-white text-xl text-center font-poppins pt-8 px-15">
-            If you are arriving or going to the airport need transportation, please do not hesitate to call us. We are here whe you need us with 24-hour availability.
-            We make sure that you and your family get bes care posible.
+            {{__('If you are arriving or going to the airport need transportation, please do not hesitate to call us. We are here whe you need us with 24-hour availability. We make sure that you and your family get bes care posible.')}}
         </p>
 
     </div>
 
 </div>
+@endsection
+
+
+@section('js')
 @endsection

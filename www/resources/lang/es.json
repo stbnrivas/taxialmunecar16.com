@@ -12,7 +12,7 @@
     "Service 24h": "Servicio 24h",
     "Make your reservation here,": "Haga su reserva instantanea, ",
     " for right now or in a few days": "o para selecccione para la fecha que necesite.",
-    "Instant Booking": "Reserva instantanea",
+    "Almuñecar Instant Booking": "Reserva instantanea",
     "Booking by date": "Reserva con fecha",
     "Book a taxi to the airport": "Reserve su taxi al aeropuerto",
     "If you arrive at Malaga airport and need transportation, please call us.": "Si llegas al aeropuerto de malaga y necesitas transporte, llamanos.",
@@ -36,6 +36,10 @@
     "Airport Booking": "Reserva con recogida en aeropuerto",
     "Cruise Booking": "Reserva con recogida en puerto maritimo",
     "Route by coast": "Reserva ruta costa tropical",
+    "Please select the port for your booking": "Por favor seleccione el puerto para su reserva",
+    "Please select the airport for your booking": "Por favor seleccion el aeropuerto para su reserva",
+    "Port": "Puerto maritimo",
+    "Airport": "Aeropuerto",
     "date for booking": "Fecha de la reserva",
     "time for booking": "Hora de la reserva",
     "your name and surname": "Introduzca su nombre (obligatorio)",
@@ -43,5 +47,10 @@
     "your email address": "Introduzca su dirección de correo",
     "taxi pickup location": "Introduzca la direccion de recogida (obligatorio)",
     "taxi destination": "Introduzca la direccion de destino",
-    "Make your reservation!": "Hacer su reserva"
+    "Make your reservation!": "Hacer su reserva",
+    "If you are arriving or going to the airport need transportation, please do not hesitate to call us. We are here whe you need us with 24-hour availability. We make sure that you and your family get bes care posible.": "Si llega o se dirige al aeropuerto y necesita transporte, no dude en llamarnos. Estamos disponibles las 24 horas cuando nos necesite. Nos aseguramos de que usted y su familia reciban la mejor atención posible.",
+    "Legal Notice": "Aviso Legal",
+    "Privacy Policy": "Politica de Privacidad",
+    "Cookie Policy": "Politica de Cookies",
+    "Accesibility": "Accesibilidad"
 }
