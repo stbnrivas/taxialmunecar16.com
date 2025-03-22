@@ -14,19 +14,23 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('lang');
-            $table->string('type'); // can be: instant, reservation, cruise, airport, route
-            $table->string('airport');
-            $table->string('port');
+            $table->enum('type', ['unknown', 'instant', 'reservation', 'cruise', 'airport', 'route']);
+            // $table->string('type');
+            $table->string('airport')->nullable();
+            $table->string('port')->nullable();
             $table->string('date');
             $table->string('time');
-            $table->string('origin');
-            $table->string('destination');
+            $table->string('origin')->nullable();
+            $table->string('destination')->nullable();
 
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+
+            $table->string('email_confirmation_code');
 
             $table->string('deletion_code');
+            $table->datetime('deletion_at')->nullable();
 
             $table->timestamps();
         });

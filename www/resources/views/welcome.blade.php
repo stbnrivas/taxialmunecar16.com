@@ -109,13 +109,14 @@
             <form id="booking-form" method="post" action="/booking">
                 @csrf
                 <input name="lang" type="hidden" value="{{ app()->getLocale() }}">
-                <select name="type" id="booking-type" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
-                    <option value="unknown"    >{{__('Please select one of type of booking')}}</option>
+                <span class="text-emerald-500">{{__('Please select one of type of booking')}}:</span>
+                <select name="type" id="booking-type" class="mb-3 block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
+                    {{-- <option value="unknown"    disabled selected>{{__('Please select one of type of booking')}}:</option> --}}
                     <option value="instant"    >{{__('Almuñecar Instant Booking')}}</option>
-                    <option value="reservation">  {{__('Booking for a date')}}</option>
-                    <option value="airport">      {{__('Airport Booking')}}</option>
-                    <option value="cruise">       {{__('Cruise Booking')}}</option>
-                    <option value="routes">       {{__('Route by coast')}}</option>
+                    <option value="reservation">{{__('Booking for a date')}}</option>
+                    <option value="airport">    {{__('Airport Booking')}}</option>
+                    <option value="cruise">     {{__('Cruise Booking')}}</option>
+                    <option value="routes">     {{__('Route by coast')}}</option>
                 </select>
                 <select id="airport-select" name="airport" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
                     <option value="unknown-airport"      >{{__('Please select the airport for your booking')}}</option>
@@ -127,14 +128,14 @@
                     <option value="Motril">Motril {{__('Port')}}</option>
                     <option value="Málaga" >Málaga {{__('Port')}}</option>
                 </select>
-                <input name="date" type="date" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('date for booking')}}">
-                <input name="time" type="time" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('time for booking')}}">
+                <input id="date-select" name="date" type="date" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('date for booking')}}" >
+                <input id="time-select" name="time" type="time" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('time for booking')}}" >
                 <input name="origin"  type="text" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi pickup location')}}">
-                <input name="destination" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('taxi destination')}}">
+                <input id="destination-select" name="destination" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('taxi destination')}}">
 
-                <input name="name" class="block p-3 mt-3 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your name and surname')}}">
-                <input name="phone" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your phone number')}}">
-                <input name="email" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your email address')}}">
+                <input name="name" class="block p-3 mt-3 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your name and surname')}}" required>
+                <input name="phone" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your phone number')}}" required >
+                <input name="email" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your email address')}}" required >
 
                 <input id="submit" class="block p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}">
             </form>
