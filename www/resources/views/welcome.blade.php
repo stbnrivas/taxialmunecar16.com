@@ -104,38 +104,47 @@
 
 
     {{-- ROW 8 --}}
-    <div class="col-span-1 text-black font-poppins font-bold">
+    <div class="col-span-1 font-poppins font-bold">
         <div class="p-10">
-            <form id="booking-form" method="post" action="/booking">
+            <form id="booking-form" method="post" action="/booking" class="">
                 @csrf
                 <input name="lang" type="hidden" value="{{ app()->getLocale() }}">
                 <span class="text-emerald-500">{{__('Please select one of type of booking')}}:</span>
                 <select name="type" id="booking-type" class="mb-3 block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
                     {{-- <option value="unknown"    disabled selected>{{__('Please select one of type of booking')}}:</option> --}}
+                    <option value="" required></option>
                     <option value="instant"    >{{__('Almuñecar Instant Booking')}}</option>
                     <option value="reservation">{{__('Booking for a date')}}</option>
                     <option value="airport">    {{__('Airport Booking')}}</option>
                     <option value="cruise">     {{__('Cruise Booking')}}</option>
                     <option value="routes">     {{__('Route by coast')}}</option>
                 </select>
+
+                <div id="airport-select-msg" class="text-emerald-500">{{__('Please select the port for your booking')}}</div>
                 <select id="airport-select" name="airport" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
-                    <option value="unknown-airport"      >{{__('Please select the airport for your booking')}}</option>
-                    <option value="Granada">Granada {{__('Airport')}}</option>
-                    <option value="Málaga" >Málaga {{__('Airport')}}</option>
+                    <option value=""></option>
+                    <option value="from-granada">{{__('From Granada Airport')}}</option>
+                    <option value="to-granada">{{__('To Granada Airport')}}</option>
+                    <option value="from-malaga" >{{__('From Málaga Airport')}}</option>
+                    <option value="to-malaga" >{{__('To Málaga Airport')}}</option>
                 </select>
+
+                <div id="port-select-msg" class="text-emerald-500">{{__('Please select the port for your booking')}}</div>
                 <select id="port-select" name="port" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
-                    <option value="unknown-port"      >{{__('Please select the port for your booking')}}</option>
-                    <option value="Motril">Motril {{__('Port')}}</option>
-                    <option value="Málaga" >Málaga {{__('Port')}}</option>
+                    <option value=""></option>
+                    <option value="from-motril">{{__('From Motril Port')}}</option>
+                    <option value="to-motril">{{__('To Motril Port')}}</option>
+                    <option value="Málaga" >{{__('From Málaga Port')}}</option>
+                    <option value="Málaga" >{{__('To Málaga Port')}}</option>
                 </select>
-                <input id="date-select" name="date" type="date" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('date for booking')}}" >
+                <input id="date-select" name="date" type="date" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white " placeholder="{{__('date for booking')}}" >
                 <input id="time-select" name="time" type="time" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('time for booking')}}" >
-                <input name="origin"  type="text" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi pickup location')}}">
+                <input id="origin-select" name="origin"  type="text" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi pickup location')}}">
                 <input id="destination-select" name="destination" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('taxi destination')}}">
 
-                <input name="name" class="block p-3 mt-3 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your name and surname')}}" required>
-                <input name="phone" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your phone number')}}" required >
-                <input name="email" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your email address')}}" required >
+                <input id="name-select" name="name" class="block p-3 mt-3 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your name and surname')}}">
+                <input id="phone-select" name="phone" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your phone number')}}">
+                <input id="email-select" name="email" class="block p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your email address')}}">
 
                 <input id="submit" class="block p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}">
             </form>
