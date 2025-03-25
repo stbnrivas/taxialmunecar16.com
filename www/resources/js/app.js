@@ -3,67 +3,104 @@
 function setBookingForm(bookingType){
     const airportSelect = document.getElementById("airport-select");
     const portSelect = document.getElementById("port-select");
+    const datetimeSelectMsg = document.getElementById("data-time-select-msg");
     const dateSelect = document.getElementById("date-select");
     const timeSelect = document.getElementById("time-select");
-    const destinationSelect = document.getElementById("destination-select");
+    const destinationsSelectMsg = document.getElementById("destinations-select-msg");
+    const journeyStartSelect = document.getElementById("journey-start-select");
+    const journeyEndsSelect = document.getElementById("journey-ends-select");
     const airportMsgSelect = document.getElementById("airport-select-msg");
     const portMsgSelect = document.getElementById("port-select-msg");
+
+    // document.getElementById("edName").required = true;
 
     if ( bookingType === 'instant'){
         airportSelect.classList.add('hidden');
         portSelect.classList.add('hidden');
         airportMsgSelect.classList.add('hidden');
         portMsgSelect.classList.add('hidden');
+        datetimeSelectMsg.classList.add('hidden');
         dateSelect.classList.add('hidden');
         timeSelect.classList.add('hidden');
-        destinationSelect.classList.remove('hidden');
+        destinationsSelectMsg.classList.remove('hidden');
+        journeyStartSelect.classList.remove('hidden');
+        journeyEndsSelect.classList.remove('hidden');
+        console.log("instant")
     } else if ( bookingType === 'reservation'){
         airportSelect.classList.add('hidden');
         airportMsgSelect.classList.add('hidden');
         portSelect.classList.add('hidden');
         portMsgSelect.classList.add('hidden');
+        datetimeSelectMsg.classList.remove('hidden');
         dateSelect.classList.remove('hidden');
         timeSelect.classList.remove('hidden');
-        destinationSelect.classList.remove('hidden');
+        destinationsSelectMsg.classList.remove('hidden');
+        journeyStartSelect.classList.remove('hidden');
+        journeyEndsSelect.classList.remove('hidden');
     } else if ( bookingType === 'airport'){
         airportSelect.classList.remove('hidden');
         airportMsgSelect.classList.remove('hidden');
         portSelect.classList.add('hidden');
         portMsgSelect.classList.add('hidden');
+        datetimeSelectMsg.classList.remove('hidden');
         dateSelect.classList.remove('hidden');
         timeSelect.classList.remove('hidden');
-        destinationSelect.classList.remove('hidden');
+        destinationsSelectMsg.classList.add('hidden');
+        journeyStartSelect.classList.add('hidden');
+        journeyEndsSelect.classList.add('hidden');
     } else if ( bookingType === 'cruise'){
         airportSelect.classList.add('hidden');
         airportMsgSelect.classList.add('hidden');
         portSelect.classList.remove('hidden');
         portMsgSelect.classList.remove('hidden');
+        datetimeSelectMsg.classList.remove('hidden');
         dateSelect.classList.remove('hidden');
         timeSelect.classList.remove('hidden');
-        destinationSelect.classList.remove('hidden');
+        destinationsSelectMsg.classList.add('hidden');
+        journeyStartSelect.classList.add('hidden');
+        journeyEndsSelect.classList.add('hidden');
     } else if ( bookingType === 'routes'){
         airportSelect.classList.add('hidden');
         airportMsgSelect.classList.add('hidden');
         portSelect.classList.add('hidden');
         portMsgSelect.classList.add('hidden');
+        datetimeSelectMsg.classList.remove('hidden');
         dateSelect.classList.remove('hidden');
         timeSelect.classList.remove('hidden');
-        destinationSelect.classList.add('hidden');
+        destinationsSelectMsg.classList.add('hidden');
+        journeyStartSelect.classList.add('hidden');
+        journeyEndsSelect.classList.add('hidden');
     } else {
         // unknown
-        airportSelect.classList.add('hidden');
-        airportMsgSelect.classList.add('hidden');
-        portSelect.classList.add('hidden');
-        portMsgSelect.classList.add('hidden');
-        dateSelect.classList.remove('hidden');
-        timeSelect.classList.remove('hidden');
-        destinationSelect.classList.remove('hidden');
+        // airportSelect.classList.add('hidden');
+        // airportMsgSelect.classList.add('hidden');
+        // portSelect.classList.add('hidden');
+        // portMsgSelect.classList.add('hidden');
+        // datetimeSelectMsg.classList.add('hidden');
+        // dateSelect.classList.add('hidden');
+        // timeSelect.classList.add('hidden');
+        // destinationsSelectMsg.classList.add('hidden');
+        // journeyStartSelect.classList.add('hidden');
+        // journeyEndsSelect.classList.add('hidden');
     }
 }
 
 function onBookingTypeChange(event){
     const bookingType = event.target.value;
     setBookingForm(event.target.value);
+
+    // remove all red borders
+    document.getElementById("booking-type").classList.remove('border-red-500')
+    document.getElementById("airport-select").classList.remove('border-red-500')
+    document.getElementById("port-select").classList.remove('border-red-500')
+    document.getElementById("data-time-select-msg").classList.remove('border-red-500')
+    document.getElementById("date-select").classList.remove('border-red-500')
+    document.getElementById("time-select").classList.remove('border-red-500')
+    document.getElementById("destinations-select-msg").classList.remove('border-red-500')
+    document.getElementById("journey-start-select").classList.remove('border-red-500')
+    document.getElementById("journey-ends-select").classList.remove('border-red-500')
+    document.getElementById("airport-select-msg").classList.remove('border-red-500')
+    document.getElementById("port-select-msg").classList.remove('border-red-500')
 }
 
 function onBookingFormSubmit(event) {
@@ -108,12 +145,15 @@ function onBookingFormSubmit(event) {
         isValid = isValid && false
     }
 
-    const ori = document.getElementById("origin-select")
-    const dst = document.getElementById("destination-select")
-
-
     const date = document.getElementById("date-select");
     const time = document.getElementById("time-select");
+
+    const ori = document.getElementById("journey-start-select")
+    const dst = document.getElementById("journey-ends-select")
+
+    const port = document.getElementById("port-select")
+    const airport = document.getElementById("airport-select")
+
 
     if (['instant', 'reservation', 'cruise', 'airport', 'route'].indexOf(booking_type.value) > -1) {
         booking_type.classList.remove('border-red-500')
@@ -212,6 +252,8 @@ window.addEventListener('load', function () {
 
     const formSelect = document.getElementById("booking-type")
     formSelect.addEventListener("change", onBookingTypeChange)
+
+    formSelect.value = ''
 
     const form = document.getElementById("booking-form")
     form.addEventListener("submit", onBookingFormSubmit)

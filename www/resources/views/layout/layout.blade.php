@@ -51,7 +51,7 @@
                 </li>
                 <li>
                     <a href="#" class="block px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-emerald-700 lg:p-0 dark:text-white lg:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
-                        <img class="w-13 " src="img/Bandera_de_Almunecar_Granada.jpg" alt="">
+                        <img class="w-13 " src="/img/Bandera_de_Almunecar_Granada.jpg" alt="">
                     </a>
                 </li>
                 </ul>
