@@ -10,4 +10,9 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    build: {
+		cssMinify: false, // Deactivate esbuild and use cssnano for CSS only
+		minify: false,
+		// Other build options go here
+	},
 });

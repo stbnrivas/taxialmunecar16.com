@@ -106,12 +106,12 @@
     {{-- ROW 8 --}}
     <div class="col-span-1 font-poppins font-bold">
         <div class="p-10">
-            <form id="booking-form" method="post" action="/booking" class="">
+            <form id="booking-form" method="post" action="/{{ app()->getLocale() }}/" class="">
                 @csrf
                 <input name="lang" type="hidden" value="{{ app()->getLocale() }}">
 
                 <span class="text-emerald-500">{{__('Please select one of type of booking')}}</span>
-                <select name="type" id="booking-type" class="mb-3 p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
+                <select id="booking-type" name="type" class="mb-3 p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white">
                     {{-- <option value="unknown"    disabled selected>{{__('Please select one of type of booking')}}:</option> --}}
                     <option value=""></option>
                     <option value="instant"    >{{__('Almuñecar Instant Booking')}}</option>
@@ -135,24 +135,24 @@
                     <option value=""></option>
                     <option value="from-motril">{{__('From Motril Port')}}</option>
                     <option value="to-motril">{{__('To Motril Port')}}</option>
-                    <option value="Málaga" >{{__('From Málaga Port')}}</option>
-                    <option value="Málaga" >{{__('To Málaga Port')}}</option>
+                    <option value="from-malaga" >{{__('From Málaga Port')}}</option>
+                    <option value="to-malaga" >{{__('To Málaga Port')}}</option>
                 </select>
 
                 <div id="data-time-select-msg" class="hidden text-emerald-500 mt-3">{{__('Please select the date and time for your booking')}}</div>
                 <input id="date-select" name="date" type="date" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white " placeholder="{{__('date for booking')}}" >
                 <input id="time-select" name="time" type="time" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white " placeholder="{{__('time for booking')}}" >
 
-                <div id="destinations-select-msg" class="text-emerald-500 mt-3">{{__('Choose the pick-up point and destination')}}</div>
-                <input id="journey-start-select" name="origin" type="text"     class="p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi pickup location')}}">
-                <input id="journey-ends-select" name="destination" type="text" class="p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi destination')}}">
+                <div id="destinations-select-msg" class="hidden text-emerald-500 mt-3">{{__('Choose the pick-up point and destination')}}</div>
+                <input id="journey-start-select" name="origin" type="text"     class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi pickup location')}}">
+                <input id="journey-ends-select" name="destination" type="text" class="hidden p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" placeholder="{{__('taxi destination')}}">
 
                 <div id="contact-info-msg" class="text-emerald-500 mt-3">{{__('Information to contact you')}}</div>
                 <input id="name-select" name="name" class="p-3 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your name and surname')}}">
                 <input id="phone-select" name="phone" class="p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your phone number')}}">
                 <input id="email-select" name="email" class="p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your email address')}}">
 
-                <input id="submit" class="p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}">
+                <input class="p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}">
             </form>
 
         </div>

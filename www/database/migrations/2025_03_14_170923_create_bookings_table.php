@@ -14,16 +14,18 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('lang');
-            $table->enum('type', ['unknown', 'instant', 'reservation', 'cruise', 'airport', 'route']);
             // $table->string('type');
+            $table->enum('type', ['unknown', 'instant', 'reservation', 'cruise', 'airport', 'route']);
             $table->string('airport')->nullable();
+            // $table->enum('airport', ['from-granada-airport', 'to-granada-airport', 'from-malaga-airport', 'to-malaga-airport'])->nullable();
             $table->string('port')->nullable();
-            $table->string('date');
-            $table->string('time');
+            // $table->enum('port', ['from-motril-port', 'to-motril-port', 'from-malaga-port', 'to-malaga-port'])->nullable();
+            $table->string('date')->nullable();
+            $table->string('time')->nullable();
             $table->string('origin')->nullable();
             $table->string('destination')->nullable();
 
-            $table->string('name')->nullable();
+            $table->string('name')->nullable()->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
 
