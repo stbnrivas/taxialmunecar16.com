@@ -114,7 +114,6 @@ function validateName(){
         name.classList.add('border-red-500')
         name.classList.add('border-2')
         error++
-        console.log("name not valid") // TODO: delete
     }
     return error
 }
@@ -129,7 +128,6 @@ function validatePhone(){
         phone.classList.add('border-red-500')
         phone.classList.add('border-2')
         error++
-        console.log("phone not valid") // TODO: delete
     }
     return error
 }
@@ -145,7 +143,6 @@ function validateEmail(){
         email.classList.add('border-red-500')
         email.classList.add('border-2')
         error++
-        console.log("email not valid") // TODO: delete
     }
     return error
 }
@@ -153,14 +150,13 @@ function validateEmail(){
 function validateBookingType(){
     const booking_type = document.getElementById("booking-type")
     let error = 0
-    if (['instant', 'reservation', 'cruise', 'airport', 'route'].indexOf(booking_type.value) > -1) {
+    if (['instant', 'reservation', 'cruise', 'airport', 'routes'].indexOf(booking_type.value) > -1) {
         booking_type.classList.remove('border-red-500')
         booking_type.classList.remove('border-2')
     } else {
         booking_type.classList.add('border-red-500')
         booking_type.classList.add('border-2')
         error++
-        console.log("booking type not valid") // TODO: delete
     }
     return error
 }
@@ -175,7 +171,6 @@ function validateTaxiOrigin(){
         ori.classList.add('border-red-500')
         ori.classList.add('border-2')
         error++
-        console.log("origin not valid") // TODO: delete
     }
     return error
 }
@@ -183,7 +178,6 @@ function validateTaxiOrigin(){
 function validateTaxiDestination(){
     const dst = document.getElementById("journey-ends-select")
     let error = 0
-
     if (dst.value){
         dst.classList.remove('border-red-500')
         dst.classList.remove('border-2')
@@ -191,8 +185,8 @@ function validateTaxiDestination(){
         dst.classList.add('border-red-500')
         dst.classList.add('border-2')
         error++
-        console.log("destination not valid") // TODO: delete
     }
+    return error
 }
 
 function validateDate(){
@@ -202,11 +196,9 @@ function validateDate(){
         date.classList.add('border-red-500')
         date.classList.add('border-2')
         error++
-        console.log("date not valid") // TODO: delete
     } else {
         date.classList.remove('border-red-500')
         date.classList.remove('border-2')
-        error++
     }
     return error
 }
@@ -218,28 +210,25 @@ function validateTime(){
     if (time.value){
         time.classList.remove('border-red-500')
         time.classList.remove('border-2')
-        error++
-        console.log("time not valid") // TODO: delete
     } else {
         time.classList.add('border-red-500')
         time.classList.add('border-2')
         error++
     }
-    return validateTime
+    return error
 }
 
 function validateAirport(){
     let error = 0
     const airport = document.getElementById("airport-select")
+
     if (airport.value){
         airport.classList.remove('border-red-500')
         airport.classList.remove('border-2')
-        error++
     } else {
         airport.classList.add('border-red-500')
         airport.classList.add('border-2')
         error++
-        console.log("airport not valid") // TODO: delete
     }
     return error
 }
@@ -250,12 +239,10 @@ function validatePort(){
     if (port.value){
         port.classList.remove('border-red-500')
         port.classList.remove('border-2')
-        error++
     } else {
         port.classList.add('border-red-500')
         port.classList.add('border-2')
         error++
-        console.log("port not valid") // TODO: delete
     }
     return error
 }
@@ -266,26 +253,26 @@ function onBookingFormSubmit(event) {
     let errors = 0
 
     const booking_type = document.getElementById("booking-type")
-    errors = validateName() + validatePhone() + validateEmail() + validateBookingType()
+    errors += validateName() + validatePhone() + validateEmail() + validateBookingType()
 
     if (booking_type.value == 'instant'){
-        errors = validateTaxiOrigin() && validateTaxiDestination()
+        errors += validateTaxiOrigin() + validateTaxiDestination()
     }
 
     if (booking_type.value == 'reservation'){
-        errors = validateDate() && validateTime() && validateTaxiOrigin() && validateTaxiDestination()
+        errors += validateDate() + validateTime() + validateTaxiOrigin() + validateTaxiDestination()
     }
 
     if (booking_type.value == 'airport'){
-        errors = validateAirport() && validateDate() && validateTime()
+        errors += validateAirport() + validateDate() + validateTime()
     }
 
     if (booking_type.value == 'cruise'){
-        errors = validatePort() && validateDate() && validateTime()
+        errors += validatePort() + validateDate() + validateTime()
     }
 
     if (booking_type.value == 'routes'){
-        errors = validateDate() && validateTime()
+        errors += validateDate() + validateTime()
     }
 
     if(errors == 0){

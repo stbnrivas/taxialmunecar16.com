@@ -153,9 +153,11 @@ Route::post("/{locale?}/", function (Request $request, $locale = null) {
         checkBookingForDate($data, $errors);
         checkBookingAirPort($data, $errors);
         checkContactInfo($data, $errors);
-    } else if ($data['type'] == 'route'){
+    } else if ($data['type'] == 'routes'){
         $data['airport'] = "";
         $data['port'] = "";
+        $data['origin'] = "";
+        $data['destination'] = "";
         checkBookingForDate($data, $errors);
         checkContactInfo($data, $errors);
     }
