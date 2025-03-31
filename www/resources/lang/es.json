@@ -63,6 +63,7 @@
     "Cookie Policy": "Politica de Cookies",
     "Accesibility": "Accesibilidad",
     "Thanks for your Booking!": "Gracias por su reserva",
-    "We need that you visit your email to confirm": "",
-    "return back to index": "volver"
+    "Please check your email to confirm your booking": "",
+    "return back to index": "volver",
+    "Sorry, something was wrong": "Lo sentimos, la reserva falló"
 }

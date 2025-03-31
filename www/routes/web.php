@@ -193,8 +193,26 @@ Route::post("/{locale?}/", function (Request $request, $locale = null) {
 });
 
 
-Route::get("{locale?}/booking/{result?}", function ($deletion_code = null) {
-    return view('book');
+Route::get("{locale?}/booking/{result?}", function (Request $request) {
+    return view('book',['result' => $request->result ]);
+});
+
+
+// confirm
+
+
+Route::get("{locale?}/email", function (Request $request) {
+    return view('book',['code' => $request->code ]);
+});
+
+
+Route::get("{locale?}/booking/confirmation/{code?}", function (Request $request) {
+    return view('book',['code' => $request->code ]);
+});
+
+
+Route::get("{locale?}/booking/delete/{code?}", function (Request $request) {
+    return view('book',['code' => $request->code ]);
 });
 
 
