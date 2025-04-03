@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BookingConfirmation;
+
 # logs messages: `info('This is some useful information.');`
 
 function checkBookingLocations($data, &$errors_at ): int {
@@ -163,28 +166,32 @@ Route::post("/{locale?}/", function (Request $request, $locale = null) {
     }
 
 
-    Log::info('     $data[type]                     = '. $data['type']);
-    Log::info('     $data[lang]                     = '. $data['lang']);
-    Log::info('     $data[airport]                  = '. $data['airport']);
-    Log::info('     $data[port]                     = '. $data['port']);
-    Log::info('     $data[date]                     = '. $data['date']);
-    Log::info('     $data[time]                     = '. $data['time']);
-    Log::info('     $data[origin]                   = '. $data['origin']);
-    Log::info('     $data[destination]              = '. $data['destination']);
-    Log::info('     $data[name]                     = '. $data['name']);
-    Log::info('     $data[phone]                    = '. $data['phone']);
-    Log::info('     $data[email]                    = '. $data['email']);
-    Log::info('     $data[deletion_code]            = '. $data['deletion_code']);
-    Log::info('     $data[email_confirmation_code]  = '. $data['email_confirmation_code']);
+    // Log::info('     $data[type]                     = '. $data['type']);
+    // Log::info('     $data[lang]                     = '. $data['lang']);
+    // Log::info('     $data[airport]                  = '. $data['airport']);
+    // Log::info('     $data[port]                     = '. $data['port']);
+    // Log::info('     $data[date]                     = '. $data['date']);
+    // Log::info('     $data[time]                     = '. $data['time']);
+    // Log::info('     $data[origin]                   = '. $data['origin']);
+    // Log::info('     $data[destination]              = '. $data['destination']);
+    // Log::info('     $data[name]                     = '. $data['name']);
+    // Log::info('     $data[phone]                    = '. $data['phone']);
+    // Log::info('     $data[email]                    = '. $data['email']);
+    // Log::info('     $data[deletion_code]            = '. $data['deletion_code']);
+    // Log::info('     $data[email_confirmation_code]  = '. $data['email_confirmation_code']);
 
-    Log::info('     $errors = '. count($errors));
-    Log::info('     $errors   = '. implode(", ", $errors));
+    // Log::info('     $errors = '. count($errors));
+    // Log::info('     $errors   = '. implode(", ", $errors));
 
     $result = '';
     if (count($errors) == 0){
-        $booking =  Booking::create($data);
+        $booking = Booking::create($data);
         $request->session()->put('errors', []);
         $result = 'success';
+
+        Mail::to('stbnrivas@gmail.com')->locale($data['lang'])->send(new BookingConfirmation($booking));
+        // Mail::to($request->user())->send(new OrderShipped($order));
+
     } else {
         $request->session()->put('errors', $errors);
         $result = 'error';
@@ -202,11 +209,14 @@ Route::get("{locale?}/booking/{result?}", function (Request $request) {
 
 
 Route::get("{locale?}/email", function (Request $request) {
-    return view('book',['code' => $request->code ]);
+    // Mail::to('stbnrivas@gmail.com')->send(new BookingConfirmation());
+    // return "mail sent";
 });
 
 
 Route::get("{locale?}/booking/confirmation/{code?}", function (Request $request) {
+
+
     return view('book',['code' => $request->code ]);
 });
 

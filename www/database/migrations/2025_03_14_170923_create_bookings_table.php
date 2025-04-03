@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('email_confirmation_code');
             $table->string('deletion_code');
             $table->datetime('deletion_at')->nullable();
+            $table->datetime('notify_at')->nullable();
 
             $table->timestamps();
         });
