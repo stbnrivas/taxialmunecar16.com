@@ -1,4 +1,8 @@
-this is a email blade template
+{{ App()->setLocale($lang) }}
+
+{{ __('Thanks for your Booking!') }}
+
+
 
 lang :        {{ $lang }}
 type :        {{ $type }}
@@ -18,5 +22,5 @@ email : {{ $email }}
 
 {{ App()->setLocale('de') }}
 
-{{ __('From Granada Airport') }}
-{{ __('Book Cruises Taxi') }}
+
+{{ __('you can visit the next link to delete all your booking information and cancel the booking.') }}

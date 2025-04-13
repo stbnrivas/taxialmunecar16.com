@@ -12,7 +12,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 use App\Models\Booking;
 
-class BookingConfirmation extends Mailable
+class BookingNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,7 +31,7 @@ class BookingConfirmation extends Mailable
     {
         return new Envelope(
             from: new Address('reply@taxialmunecar16.com', 'Taxi Almuñecar 16'),
-            subject: 'Your booking needs confirmation'
+            subject: 'Nueva Reserva Taxi'
         );
     }
 
@@ -41,7 +41,7 @@ class BookingConfirmation extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email-booking-confirmation',
+            view: 'email-booking-notification',
             with: [
                 'lang' => $this->booking->lang, # into view use `{{ $lang }}`
                 'type' => $this->booking->type, # into view use `{{ $type }}`

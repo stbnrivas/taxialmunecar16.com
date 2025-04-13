@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BookingConfirmation;
+use App\Mail\BookingNotification;
 
 # logs messages: `info('This is some useful information.');`
 
@@ -110,7 +111,7 @@ Route::get("/{locale?}/", function ($locale = null) {
 
 Route::post("/{locale?}/", function (Request $request, $locale = null) {
 
-    Log::info("=================== post /" . $locale . "/");
+    // Log::info("=================== post /" . $locale . "/");
 
     $email_confirmation_code = Str::random(10) . now()->timestamp . Str::random(10);
     $deletion_code = Str::random(10) . now()->timestamp . Str::random(10);
@@ -125,8 +126,8 @@ Route::post("/{locale?}/", function (Request $request, $locale = null) {
         'origin'                  => $request->origin,
         'destination'             => $request->destination,
         'name'                    => $request->name,
-        'phone'                   => $request->email,
-        'email'                   => $request->phone,
+        'phone'                   => $request->phone,
+        'email'                   => $request->email,
         'deletion_code'           => $deletion_code,
         'email_confirmation_code' => $email_confirmation_code
     ];
@@ -189,8 +190,11 @@ Route::post("/{locale?}/", function (Request $request, $locale = null) {
         $request->session()->put('errors', []);
         $result = 'success';
 
-        Mail::to('stbnrivas@gmail.com')->locale($data['lang'])->send(new BookingConfirmation($booking));
-        // Mail::to($request->user())->send(new OrderShipped($order));
+        // // mail confirmation to user who made the booking
+        Mail::to($data['email'])->send(new BookingConfirmation($booking));
+
+        // // mail notification to notify a taxi booking
+        Mail::to(env('MAIL_TO_NOTIFY_BOOKING'))->send(new BookingNotification($booking));
 
     } else {
         $request->session()->put('errors', $errors);
