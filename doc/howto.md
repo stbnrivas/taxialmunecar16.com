@@ -6,9 +6,11 @@ laravel new website
 cd website/
 npm install tailwindcss @tailwindcss/vite
 
+composer install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
+npm install
 
 php artisan db:wipe
 
