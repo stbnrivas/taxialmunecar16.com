@@ -12,6 +12,11 @@ php artisan key:generate
 php artisan migrate
 npm install
 
+
+# restar after change .env
+    php artisan cache:clear
+    php artisan config:cache
+
 php artisan db:wipe
 
 
