@@ -39,6 +39,19 @@ php artisan make:mail BookingNotification
 
 ```
 
+# update for security fixes
+
+```
+composer audit
+composer update
+composer install
+
+npm audit
+
+```
+
+
+
 
 ## mailpit
 
