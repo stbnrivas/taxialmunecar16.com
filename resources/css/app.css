@@ -11,14 +11,8 @@
 @theme {
     --font-poppins: 'Poppins', 'sans-serif';
     --font-roboto: "Roboto", sans-serif;
+    
     --breakpoint-xs: 30rem;
-
-    /* extend: {
-      screens: {
-        'xs': '480px',  // Extra small devices
-        '3xl': '1920px', // Custom breakpoint
-      },
-    } */
 }
 
 

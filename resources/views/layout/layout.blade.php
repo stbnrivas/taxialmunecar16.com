@@ -10,7 +10,13 @@
 
 </head>
 <body>
-    <div class="h-screen grid">
+    <div class="h-screen">
+        <!--
+        <div class="xs:visible   sm:invisible md:invisible lg:invisible"> xs</div>
+        <div class="xs:invisible sm:visible   md:invisible lg:invisible"> sm</div>
+        <div class="xs:invisible sm:invisible md:visible   lg:invisible"> md</div>
+        <div class="xs:invisible sm:invisible md:invisible lg:visible  "> xl</div>
+        -->
         <nav class="bg-white text-gray-900 border-gray-200 dark:bg-gray-900 dark:text-gray-40 pt-5 pb-5 h-20">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
             <a href="https://taxialmunecar16.com" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -65,17 +71,17 @@
         {{-- --}}
 
         <footer class="bg-emerald-500">
-            <div class="flex flex-row place-content-between mx-96 my-20 text-white">
+            <div class="flex flex-row place-content-between xl:mx-96 my-20 text-white">
                 <div class="text-xl font-poppins font-bold">{{__('Legal Notice')}}</div>
                 <div class="text-xl font-poppins font-bold">{{__('Privacy Policy')}}</div>
                 <div class="text-xl font-poppins font-bold">{{__('Cookie Policy')}}</div>
                 <div class="text-xl font-poppins font-bold">{{__('Accesibility')}}</div>
             </div>
-            <div class="flex flex-row place-content-between mx-96 my-20">
-                <img class="h-16 object-cover" src="/img/logo-acelera-pyme.png" alt="">
-                <img class="h-16 object-cover" src="/img/logo-kitdigital.png" alt="">
-                <img class="h-16 object-cover" src="/img/logo-plan-recuperacion-transformacion.png" alt="">
-                <img class="h-16 object-cover" src="/img/logo-ES-Financiado-por-la-Union-Europea.png" alt="">
+            <div class="flex flex-row place-content-between xl:mx-96 my-20">
+                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-acelera-pyme.png" alt="">
+                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-kitdigital.png" alt="">
+                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-plan-recuperacion-transformacion.png" alt="">
+                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-ES-Financiado-por-la-Union-Europea.png" alt="">
             </div>
         </footer>
 

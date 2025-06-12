@@ -7,9 +7,8 @@
     {{-- ROW 1 --}}
 
     <div class="col-span-full bg-[url(/img/001-a-taxi-in-almuñecar.png)] bg-cover mx-auto min-w-full h-140 text-white font-bold pt-15">
-        <span class="block text-center max-sm:text-5xl lg:text-8xl font-roboto">{{ __('Taxi?') }}</span>
-        <span class="block text-center sm:text-5xl lg:text-8xl font-roboto">{{ __('Taxi?') }}</span>
-        <span class="block text-center sm:text-5xl lg:text-8xl font-roboto">{{ __('We take you to your destination') }}</span>
+        <span class="block text-center xs:text-5xl lg:text-8xl font-roboto">{{ __('Taxi?') }}</span>
+        <span class="block text-center xs:text-5xl lg:text-8xl font-roboto">{{ __('We take you to your destination') }}</span>
         <div class="block pt-15">
             <a href="#contact-info" class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-md rounded-xl">{{ __('Make your reservation here') }}</a>
         </div>
@@ -80,7 +79,7 @@
 
 
     {{-- ROW 6 --}}
-    <div class="pt-6 col-span-full bg-[url(/img/006-taxi-almuñecar-puerta-del-mar.png)] bg-bottom bg-cover text-white">
+    <div class="pt-6 col-span-full bg-[url(/img/006-taxi-almuñecar-puerta-del-mar.png)] bg-bottom bg-cover text-white pb-6">
         <h2 class="drop-shadow-xl text-8xl text-center pt-20 font-roboto  font-bold">{{__('Price Rates')}}</h2>
         <p class="drop-shado-xl pt-2 text-4xl text-center font-poppins">{{__('Check taxi official rates')}}</p>
         <div class="pt-3">
@@ -106,7 +105,7 @@
 
 
     {{-- ROW 8 --}}
-    <div class="sm:col-span-2 lg:col-span-1 font-poppins font-bold">
+    <div class="xs:col-span-2 lg:col-span-1 font-poppins font-bold">
         <div class="p-10">
             <form id="booking-form" method="post" action="/{{ app()->getLocale() }}/" class="">
                 @csrf
