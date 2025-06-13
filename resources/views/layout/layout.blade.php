@@ -70,18 +70,18 @@
         @yield('js')
         {{-- --}}
 
-        <footer class="bg-emerald-500">
-            <div class="flex flex-row place-content-between xl:mx-96 my-20 text-white">
+        <footer class="bg-emerald-500 h-72">
+            <div class="flex flex-row place-content-between mx-96 pt-20 text-white">
                 <div class="text-xl font-poppins font-bold">{{__('Legal Notice')}}</div>
                 <div class="text-xl font-poppins font-bold">{{__('Privacy Policy')}}</div>
                 <div class="text-xl font-poppins font-bold">{{__('Cookie Policy')}}</div>
                 <div class="text-xl font-poppins font-bold">{{__('Accesibility')}}</div>
             </div>
-            <div class="flex flex-row place-content-between xl:mx-96 my-20">
-                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-acelera-pyme.png" alt="">
-                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-kitdigital.png" alt="">
-                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-plan-recuperacion-transformacion.png" alt="">
-                <img class="h-8 sm:h-10 xl:h-16 object-cover" src="/img/logo-ES-Financiado-por-la-Union-Europea.png" alt="">
+            <div class="flex flex-row place-content-between mx-20 pt-20">
+                <img class="h-10 md:h-16 object-cover" src="/img/logo-acelera-pyme.png" alt="">
+                <img class="h-10 md:h-16 object-cover" src="/img/logo-kitdigital.png" alt="">
+                <img class="h-10 md:h-16 object-cover" src="/img/logo-plan-recuperacion-transformacion.png" alt="">
+                <img class="h-10 md:h-16 object-cover" src="/img/logo-ES-Financiado-por-la-Union-Europea.png" alt="">
             </div>
         </footer>
 

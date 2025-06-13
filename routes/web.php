@@ -94,7 +94,7 @@ function checkContactInfo($data, &$errors_at): int {
 // });
 
 Route::get('/', function () {
-    return redirect('/en/');
+    return redirect('/es/');
 });
 
 Route::get("/{locale?}/", function ($locale = null) {
@@ -102,8 +102,8 @@ Route::get("/{locale?}/", function ($locale = null) {
         app()->setLocale($locale);
         return view('welcome');
     } else {
-        $locale = 'en';
-        return redirect('/en/');
+        $locale = 'es';
+        return redirect('/es/');
     }
 });
 

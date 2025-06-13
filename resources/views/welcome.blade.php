@@ -7,8 +7,8 @@
     {{-- ROW 1 --}}
 
     <div class="col-span-full bg-[url(/img/001-a-taxi-in-almuñecar.png)] bg-cover mx-auto min-w-full h-140 text-white font-bold pt-15">
-        <span class="block text-center xs:text-5xl lg:text-8xl font-roboto">{{ __('Taxi?') }}</span>
-        <span class="block text-center xs:text-5xl lg:text-8xl font-roboto">{{ __('We take you to your destination') }}</span>
+        <span class="block text-center text-5xl lg:text-8xl font-roboto">{{ __('Taxi?') }}</span>
+        <span class="block text-center text-5xl lg:text-8xl font-roboto">{{ __('We take you to your destination') }}</span>
         <div class="block pt-15">
             <a href="#contact-info" class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-md rounded-xl">{{ __('Make your reservation here') }}</a>
         </div>
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="col-span-1 bg-[url(/img/book-a-taxi-in-granada-2024.jpg)] bg-cover h-140 text-white font-bold hidden lg:block">
+    <div class="col-span-1 bg-[url(/img/book-a-taxi-in-almuñecar-2025a.jpg)] bg-cover h-140 text-white font-bold hidden lg:block">
     </div>
 
 
@@ -105,7 +105,7 @@
 
 
     {{-- ROW 8 --}}
-    <div class="xs:col-span-2 lg:col-span-1 font-poppins font-bold">
+    <div class="col-span-2 lg:col-span-1 font-poppins font-bold">
         <div class="p-10">
             <form id="booking-form" method="post" action="/{{ app()->getLocale() }}/" class="">
                 @csrf
@@ -158,7 +158,7 @@
 
         </div>
     </div>
-    <div class="col-span-1 bg-[url(/img/fran-fernandez-r9uyVJ7_K6s-unsplash.jpg)] bg-center bg-cover text-white font-bold hidden lg:block">
+    <div class="hidden lg:block col-span-1 bg-[url(/img/fran-fernandez-r9uyVJ7_K6s-unsplash.jpg)] bg-center bg-cover text-white font-bold">
         <h3 class="block text-6xl text-center pt-25 font-roboto">
             {{__('Make your reservation here')}}
         </h3>
@@ -168,6 +168,7 @@
     </div>
 
 </div>
+
 @endsection
 
 
