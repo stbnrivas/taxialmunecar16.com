@@ -10,7 +10,7 @@
         <span class="block text-center text-5xl lg:text-8xl font-roboto">{{ __('Taxi?') }}</span>
         <span class="block text-center text-5xl lg:text-8xl font-roboto">{{ __('We take you to your destination') }}</span>
         <div class="block pt-15">
-            <a href="#contact-info" class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-md rounded-xl">{{ __('Make your reservation here') }}</a>
+            <a href="#contact-info" class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-xs md:w-md rounded-xl">{{ __('Make your reservation here') }}</a>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
 
         <div class="flex">
             <div class="block pt-5 mx-auto">
-                <a class="block text-center text-2xl font-bold bg-emerald-500 p-3 w-md rounded-xl text-white font-poppins" href="">{{ __('Make your reservation here') }}</a>
+                <a class="block text-center text-2xl font-bold bg-emerald-500 p-3 w-xs md:w-md  rounded-xl text-white font-poppins" href="">{{ __('Make your reservation here') }}</a>
             </div>
         </div>
     </div>
@@ -39,10 +39,10 @@
             <p class="text-2xl font-bold text-center pt-4 text-poppins">{{__('Make your reservation here,')}} <br class="block"> {{__(' for right now or in a few days')}} </p>
             <div class="flex flex-col">
                 <div class="block mt-5 mx-auto">
-                    <a class="block text-center text-2xl bg-emerald-500 p-3 w-md rounded-xl text-white" href="">{{__('Instant Booking')}}</a>
+                    <a class="block text-center text-2xl bg-emerald-500 p-3 w-xs md:w-md  rounded-xl text-white" href="">{{__('Instant Booking')}}</a>
                 </div>
                 <div class="block pt-5 mx-auto">
-                    <a class="block text-center text-2xl bg-emerald-500 p-3 w-md rounded-xl text-white" href="">{{__('Booking by date')}}</a>
+                    <a class="block text-center text-2xl bg-emerald-500 p-3 w-xs md:w-md  rounded-xl text-white" href="">{{__('Booking by date')}}</a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
         <p class="text-xl text-center pt-3 font-poppins">{{__('We make sure tha you and your family get the best care posible.')}}</p>
         <div class="flex">
             <div class="block pt-5 mx-auto">
-                <a class="block text-center text-2xl font-bold bg-emerald-500 p-3 w-md rounded-xl text-white font-poppins" href="">{{__('Book Airport Taxi')}}</a>
+                <a class="block text-center text-2xl font-bold bg-emerald-500 p-3 w-xs md:w-md  rounded-xl text-white font-poppins" href="">{{__('Book Airport Taxi')}}</a>
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
         <p class="text-xl text-center pt-7 font-poppins">{{__('We are here when you need us. If you are travelling on a cruise')}}</p>
         <p class="text-xl text-center pt-2 font-poppins">{{__('we will take you to any port on the Costa Tropical, Almeria or Málaga')}}</p>
         <div class="pt-3">
-            <a class="block mt-4 mx-auto bg-emerald-500 p-2 w-md rounded-xl font-poppins font-bold text-white text-center text-2xl " href="">{{__('Book a taxi for your cruise')}}</a>
+            <a class="block mt-4 mx-auto bg-emerald-500 p-2 w-xs md:w-md  rounded-xl font-poppins font-bold text-white text-center text-2xl " href="">{{__('Book a taxi for your cruise')}}</a>
         </div>
     </div>
     <div class="col-span-1 bg-[url(/img/004-book-a-taxi-for-you-cruises-in-almunecar.png)] bg-cover bg-left-bottom h-140 text-white font-bold hidden lg:block">
@@ -83,10 +83,10 @@
         <h2 class="drop-shadow-xl text-8xl text-center pt-20 font-roboto  font-bold">{{__('Price Rates')}}</h2>
         <p class="drop-shado-xl pt-2 text-4xl text-center font-poppins">{{__('Check taxi official rates')}}</p>
         <div class="pt-3">
-            <a class="block mt-4 mx-auto text-center text-2xl bg-emerald-500 p-2 w-md rounded-xl font-poppins font-bold" href="">{{__('Official Rates')}}</a>
+            <a class="block mt-4 mx-auto text-center text-2xl bg-emerald-500 p-2 w-xs md:w-md  rounded-xl font-poppins font-bold" href="">{{__('Official Rates')}}</a>
         </div>
         <div class="pt-2">
-            <a class="block mt-2 mx-auto text-center text-2xl bg-emerald-500 p-2 w-md rounded-xl font-poppins font-bold" href="">{{__('Rates For Pre-Arranges Reservations')}}</a>
+            <a class="block mt-2 mx-auto text-center text-2xl bg-emerald-500 p-2 w-xs md:w-md  rounded-xl font-poppins font-bold" href="">{{__('Rates For Pre-Arranges Reservations')}}</a>
         </div>
     </div>
 
@@ -99,7 +99,7 @@
         <p class="text-2xl text-center pt-7 font-poppins">{{__("If you want to discover the best sunsets on the Costa Tropical, don&quote;t hesitate to call us.")}}</p>
         <p class="text-2xl text-center pt-2 font-poppins">{{__('At taxi almunecar 16, we will take care of organizing the best route for your trip.')}}</p>
         <div class="pt-6">
-            <a class="block mt-2 mx-auto text-center text-2xl bg-emerald-500 p-3 w-md rounded-xl font-poppins font-bold text-white" href="">{{__('Book a taxi for your routes')}}</a>
+            <a class="block mt-2 mx-auto text-center text-2xl bg-emerald-500 p-3 w-xs md:w-md  rounded-xl font-poppins font-bold text-white" href="">{{__('Book a taxi for your routes')}}</a>
         </div>
     </div>
 
