@@ -1,7 +1,6 @@
 {{ App()->setLocale($lang) }}
 
-DATOS DE RESERVA <br>
-
+<h1>DATOS DE RESERVA</h1>
   Idioma del cliente:    {{ $lang }} <br>
   Nueva reserva de tipo: {{ $type }} <br>
 
@@ -30,11 +29,12 @@ DATOS DE RESERVA <br>
 </p>
 
 
+
+<h2>DATOS DE CONTACTO</h2>
 <p>
-DATOS DE CONTACTO
-  nombre:   {{ $name }}
-  telefono: {{ $phone }}
-  correo:   {{ $email }}
+  nombre:   {{ $name }} <br>
+  telefono: {{ $phone }} <br>
+  correo:   {{ $email }} <br>
 </p>
 
 {{-- BORRAR LA RESERVA --}}
