@@ -109,7 +109,7 @@ Route::get("/{locale?}/", function ($locale = null) {
 
 
 
-Route::post("/{locale?}/", function (Request $request, $locale = null) {
+Route::post("/{locale?}", function (Request $request, $locale = null) {
 
     // Log::info("=================== post /" . $locale . "/");
 

@@ -107,7 +107,7 @@
     {{-- ROW 8 --}}
     <div class="col-span-2 lg:col-span-1 font-poppins font-bold">
         <div class="p-10">
-            <form id="booking-form" method="post" action="/{{ app()->getLocale() }}/" class="">
+            <form id="booking-form" method="post" action="/{{ app()->getLocale() }}" class="">
                 @csrf
                 <input name="lang" type="hidden" value="{{ app()->getLocale() }}">
 
