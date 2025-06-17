@@ -103,7 +103,7 @@
 
         <div class="">
             <a href="https://api.whatsapp.com/send/?phone=34667033917&text&type=phone_number&app_absent=0">
-                <img class="fixed bottom-0 right-5 h-20 mr-20 mb-25" src="/img/logos/whatsapp.svg" alt="whatsapp logo">
+                <img class="fixed bottom-0 right-5 h-20 mr-10 md:mr-20 mb-25" src="/img/logos/whatsapp.svg" alt="whatsapp logo">
             </a>
         </div>
 
