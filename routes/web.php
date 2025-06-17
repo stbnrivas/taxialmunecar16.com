@@ -196,6 +196,11 @@ Route::post("/{locale?}/", function (Request $request, $locale = null) {
         // // mail notification to notify a taxi booking
         Mail::to(env('MAIL_TO_NOTIFY_BOOKING'))->send(new BookingNotification($booking));
 
+        if(strlen(env('MAIL_TO_DEVELOPMENT') > 0)){
+            // // mail notification to dev
+            Mail::to(env('MAIL_TO_DEVELOPMENT'))->send(new BookingNotification($booking));
+        }
+
     } else {
         $request->session()->put('errors', $errors);
         $result = 'error';

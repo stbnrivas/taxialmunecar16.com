@@ -11,7 +11,6 @@
 @theme {
     --font-poppins: 'Poppins', 'sans-serif';
     --font-roboto: "Roboto", sans-serif;
-    
     --breakpoint-xs: 30rem;
 }
 
