@@ -65,5 +65,12 @@
     "Thanks for your Booking!": "Gracias por su reserva",
     "Please check your email to confirm your booking": "",
     "return back to index": "volver",
-    "Sorry, something was wrong": "Lo sentimos, la reserva falló"
+    "Sorry, something was wrong": "Lo sentimos, la reserva falló",
+    "Your reservation information": "",
+    "You have made a instant reservation for": "Usted a realizado una reserva instantanea para el dia",
+    "from": "desde",
+    "to": "hasta",
+    "booking date": "fecha de la reserva",
+    "travel date": "fecha del viaje",
+    "Thanks for your Booking!, we will contact you as soon as possible": "'Gracias por tu reserva!, nos pondremos en contacto contigo lo antes posible."
 }

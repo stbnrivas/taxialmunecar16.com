@@ -1,30 +1,33 @@
 {{ App()->setLocale($lang) }}
 
-{{ __('Your reservation information') }} </br>
+<h1>{{ __('Your reservation information') }}</h1>
 
+<p>
 @if ($type == 'instant')
 {{ __('You have made a instant reservation for') }} {{ Carbon\Carbon::now() }}
-{{ __('from') }} {{ $origin }} to {{ $destination }}
+{{ __('from') }} {{ $origin }} {{ __('to') }} {{ $destination }}
 @elseif ($type == 'reservation')
-  fecha de la reserva: {{ Carbon\Carbon::now() }} </br>
-  fecha del viaje: {{ $date }} {{ $time }} </br>
-  desde:      {{ $origin }} </br>
-  hasta:      {{ $destination }} </br>
+  {{ __('booking date')}}:   {{ Carbon\Carbon::now() }} <br>
+  {{ __('travel date')}}:    {{ $date }} {{ $time }} <br>
+  {{ __('from') }}:          {{ $origin }} <br>
+  {{ __('to') }}:            {{ $destination }} <br>
 @elseif ($type == 'cruise')
-  fecha de la reserva: {{ Carbon\Carbon::now() }} </br>
-  fecha del viaje: {{ $date }} {{ $time }} </br>
-  puerto:        {{ $port }} </br>
+  {{ __('booking date')}}:    {{ Carbon\Carbon::now() }} <br>
+  {{ __('travel date')}}:     {{ $date }} {{ $time }} <br>
+  {{ __('Cruise Booking"')}}: {{ $port }} <br>
 @elseif ($type == 'airport')
-  fecha de la reserva: {{ Carbon\Carbon::now() }} </br>
-  fecha del viaje: {{ $date }} {{ $time }} </br>
-  aeropuerto:     {{ $airport }} </br>
+  {{ __('booking date')}}:      {{ Carbon\Carbon::now() }} <br>
+  {{ __('travel date')}}:       {{ $date }} {{ $time }} <br>
+  {{ __('Airport Booking"')}}:  {{ $airport }} <br>
 @elseif ($type == 'routes')
-  fecha de la reserva: {{ Carbon\Carbon::now() }} </br>
-  fecha del viaje: {{ $date }} {{ $time }} </br>
+  {{ __('booking date')}}:   {{ Carbon\Carbon::now() }} <br>
+  {{ __('travel date')}}:    {{ $date }} {{ $time }} <br>
 @endif
+</p>
 
-
-{{ __('Thanks for your Booking!, we will contact you as soon as possible.') }}  </br>
+<p>
+{{ __('Thanks for your Booking!, we will contact you as soon as possible.') }}  <br>
+</p>
 
 {{--
 lang :        {{ $lang }}

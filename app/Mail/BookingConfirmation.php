@@ -31,7 +31,7 @@ class BookingConfirmation extends Mailable
     {
         return new Envelope(
             from: new Address('reply@taxialmunecar16.com', 'Taxi Almuñecar 16'),
-            subject: 'Your booking needs confirmation'
+            subject: __('Thanks for your Booking!, we will contact you as soon as possible.')
         );
     }
 
