@@ -1,5 +1,8 @@
 @extends('layout.layout')
 
+@section('js-header')
+     <script src="https://www.google.com/recaptcha/api.js"></script>
+@endsection
 
 @section('body')
 
@@ -153,7 +156,9 @@
                 <input id="phone-select" name="phone" class="p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your phone number')}}">
                 <input id="email-select" name="email" class="p-3 mt-1 w-full bg-emerald-500 placeholder-white text-white" type="text" placeholder="{{__('your email address')}}">
 
-                <input class="p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}">
+                <input class="g-recaptchap-3 p-3 mt-3 w-full bg-emerald-600 text-white" type="submit" value="{{__('Make your reservation!')}}"
+                data-sitekey="6LeR5GQrAAAAAGaw-nGkFCfKU8VkEH_wkB0gYhkh" data-callback="onBookingFormSubmit" data-action="submit">
+
             </form>
 
         </div>
@@ -173,4 +178,5 @@
 
 
 @section('js')
+<script src="https://www.google.com/recaptcha/api.js?render=6LeR5GQrAAAAAGaw-nGkFCfKU8VkEH_wkB0gYhkh"></script>
 @endsection

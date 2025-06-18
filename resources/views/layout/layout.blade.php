@@ -7,6 +7,7 @@
     <title>{{ env("APP_NAME") }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @yield('js-header')
 
 </head>
 <body>
@@ -67,7 +68,6 @@
 
         {{-- --}}
         @yield('body')
-        @yield('js')
         {{-- --}}
 
         <footer class="bg-emerald-500 h-72">
@@ -119,5 +119,6 @@
             initFlowbite();
         })
     </script>
+    @yield('js')
 </body>
 </html>

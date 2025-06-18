@@ -129,7 +129,8 @@ Route::post("/{locale?}", function (Request $request, $locale = null) {
         'phone'                   => $request->phone,
         'email'                   => $request->email,
         'deletion_code'           => $deletion_code,
-        'email_confirmation_code' => $email_confirmation_code
+        'email_confirmation_code' => $email_confirmation_code,
+        'recaptcha_response'       => $request->recaptcha_response
     ];
 
     $errors = [];
@@ -190,16 +191,40 @@ Route::post("/{locale?}", function (Request $request, $locale = null) {
         $request->session()->put('errors', []);
         $result = 'success';
 
-        // // mail confirmation to user who made the booking
-        Mail::to($data['email'])->send(new BookingConfirmation($booking));
 
-        // // mail notification to notify a taxi booking
-        Mail::to(env('MAIL_TO_NOTIFY_BOOKING'))->send(new BookingNotification($booking));
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => env('RECAPTCHA_PRIVATE'),
+            'response' => $data['recaptcha_response'],
+        ]);
 
-        if(strlen(env('MAIL_TO_DEVELOPMENT') > 0)){
-            // // mail notification to dev
-            Mail::to(env('MAIL_TO_DEVELOPMENT'))->send(new BookingNotification($booking));
+        $recaptcha_result = $response->json();
+
+
+        if (!$recaptcha_result['success']) {
+            Log::warning('ReCaptcha validation failed', $recaptcha_result);
+            $result = 'error';
+
+        } else {
+
+            Mail::to($data['email'])->send(new BookingConfirmation($booking));
+
+            // mail confirmation to user who made the booking
+            Mail::to($data['email'])->send(new BookingConfirmation($booking));
+
+            // mail notification to notify a taxi booking
+            Mail::to(env('MAIL_TO_NOTIFY_BOOKING'))->send(new BookingNotification($booking));
+
+            if(strlen(env('MAIL_TO_DEVELOPMENT') > 0)){
+                // mail notification to dev
+                Mail::to(env('MAIL_TO_DEVELOPMENT'))->send(new BookingNotification($booking));
+            }
         }
+
+        // Log::info('ReCaptcha validation result', $recaptcha_result);
+        // Log::info('ReCaptcha validation successful', [
+        //     'score' => $recaptcha_result['score'] ?? 'N/A',
+        //     'action' => $recaptcha_result['action'] ?? 'N/A',
+        // ]);
 
     } else {
         $request->session()->put('errors', $errors);

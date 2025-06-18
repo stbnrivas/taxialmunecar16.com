@@ -276,19 +276,33 @@ function onBookingFormSubmit(event) {
     }
 
     if(errors == 0){
-        document.getElementById("booking-form").submit()
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LeR5GQrAAAAAGaw-nGkFCfKU8VkEH_wkB0gYhkh', {action: 'submit'}).then(function(token) {
+              var input = document.createElement("input");
+              input.setAttribute("type", "hidden");
+              input.setAttribute("name", "recaptcha_response");
+              input.setAttribute("value", token);
+              document.getElementById("booking-form").appendChild(input);
+
+              document.getElementById("booking-form").submit()
+          });
+        });
     }
 }
 
 
 window.addEventListener('load', function () {
     const formSelect = document.getElementById("booking-type")
-    formSelect.addEventListener("change", onBookingTypeChange)
+    if( formSelect !== 'undefined' && formSelect !== null ){
+        formSelect.addEventListener("change", onBookingTypeChange)
+        setBookingForm(formSelect.value)
+    }
 
     const form = document.getElementById("booking-form")
-    form.addEventListener("submit", onBookingFormSubmit)
+    if( form !== 'undefined' && form !== null ){
+        form.addEventListener("submit", onBookingFormSubmit)
+    }
 
-    setBookingForm(formSelect.value)
 })
 
 
