@@ -191,7 +191,6 @@ Route::post("/{locale?}", function (Request $request, $locale = null) {
         $request->session()->put('errors', []);
         $result = 'success';
 
-
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
             'secret' => env('RECAPTCHA_PRIVATE'),
             'response' => $data['recaptcha_response'],
@@ -199,13 +198,11 @@ Route::post("/{locale?}", function (Request $request, $locale = null) {
 
         $recaptcha_result = $response->json();
 
-
         if (!$recaptcha_result['success']) {
             Log::warning('ReCaptcha validation failed', $recaptcha_result);
             $result = 'error';
 
         } else {
-
             Mail::to($data['email'])->send(new BookingConfirmation($booking));
 
             // mail confirmation to user who made the booking
@@ -220,7 +217,8 @@ Route::post("/{locale?}", function (Request $request, $locale = null) {
             }
         }
 
-        // Log::info('ReCaptcha validation result', $recaptcha_result);
+        Log::info('ReCaptcha validation result', $recaptcha_result);
+
         // Log::info('ReCaptcha validation successful', [
         //     'score' => $recaptcha_result['score'] ?? 'N/A',
         //     'action' => $recaptcha_result['action'] ?? 'N/A',
