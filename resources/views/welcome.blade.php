@@ -12,8 +12,16 @@
     <div class="col-span-full bg-[url(/img/001-a-taxi-in-almuñecar.png)] bg-cover mx-auto min-w-full h-140 text-white font-bold pt-15">
         <span class="block text-center text-5xl lg:text-8xl font-roboto">{{ __('Taxi?') }}</span>
         <span class="block text-center text-5xl lg:text-8xl font-roboto">{{ __('We take you to your destination') }}</span>
-        <div class="block pt-15">
-            <a href="#contact-info" class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-xs md:w-md rounded-xl">{{ __('Make your reservation here') }}</a>
+        <div class="block">
+            <span class="block mx-auto text-white text-center text-3xl font-poppins p-3 shadow-2xl">
+                {{ __('make your reservation:') }}
+            </span>
+            <a href="#booking-form" class="block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-xs md:w-md rounded-xl">
+                {{ __('via email') }}
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=34667033917&text&type=phone_number&app_absent=0" class="mt-2 block mx-auto text-center text-2xl font-poppins bg-emerald-500 p-3 w-xs md:w-md rounded-xl">
+                <img class="inline h-10" src="/img/logos/whatsapp.svg" alt="whatsapp logo"> {{ __('via Whatsapp') }}
+            </a>
         </div>
     </div>
 
