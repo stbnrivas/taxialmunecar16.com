@@ -88,22 +88,22 @@
 
         <div class="flex">
             <a href="{{ env("APP_URL") }}/es/">
-            <img class="fixed bottom-0 left-5 h-10 mr-20 mb-30" src="/img/locales/es.svg" alt="traducir a castellano">
+            <img class="fixed bottom-35 left-5 h-10 mr-20" src="/img/locales/es.svg" alt="traducir a castellano">
             </a>
             <a href="{{ env("APP_URL") }}/en/">
-            <img class="fixed bottom-0 left-20 h-10 mr-20 mb-30" src="/img/locales/en.svg" alt="translate to english">
+            <img class="fixed bottom-35 left-20 h-10 mr-20" src="/img/locales/en.svg" alt="translate to english">
             </a>
             <a href="{{ env("APP_URL") }}/fr/">
-            <img class="fixed bottom-0 left-35 h-10 mr-20 mb-30" src="/img/locales/fr.svg" alt="traduire en français">
+            <img class="fixed bottom-35 left-35 h-10 mr-20" src="/img/locales/fr.svg" alt="traduire en français">
             </a>
             <a href="{{ env("APP_URL") }}/de/">
-            <img class="fixed bottom-0 left-50 h-10 mr-20 mb-30" src="/img/locales/de.svg" alt="ins Deutsche übersetzen">
+            <img class="fixed bottom-35 left-50 h-10 mr-20" src="/img/locales/de.svg" alt="ins Deutsche übersetzen">
         </a>
         </div>
 
-        <div class="">
+        <div class="flex">
             <a href="https://api.whatsapp.com/send/?phone=34667033917&text&type=phone_number&app_absent=0">
-                <img class="fixed bottom-0 right-5 h-20 mr-10 md:mr-20 mb-25" src="/img/logos/whatsapp.svg" alt="whatsapp logo">
+                <img class="fixed bottom-25 right-10 md:right-25 xl:right-50 h-20" src="/img/logos/whatsapp.svg" alt="whatsapp logo">
             </a>
         </div>
 
